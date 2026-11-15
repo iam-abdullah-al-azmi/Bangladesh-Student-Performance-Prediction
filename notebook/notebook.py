@@ -27,7 +27,6 @@ def _():
 
     from sklearn.ensemble import VotingRegressor, StackingRegressor
 
-
     # Evaluation Metrics
 
     from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
@@ -81,7 +80,9 @@ def _(mo):
 
 @app.cell
 def _(ProfileReport, df):
-    profile_report = ProfileReport(df, title="Bangladesh Student Performance Prediction")
+    profile_report = ProfileReport(
+        df, title="Bangladesh Student Performance Prediction"
+    )
     return (profile_report,)
 
 
@@ -140,6 +141,24 @@ def _(df):
 
 
 @app.cell
+def _(df, plt, sns):
+    fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(14, 6))
+
+    sns.histplot(data=df, x="st_age", kde=True, ax=axes[0, 0])
+    sns.histplot(data=df, x="m_edu", kde=True, ax=axes[0, 1])
+    sns.histplot(data=df, x="f_edu", kde=True, ax=axes[0, 2])
+
+    sns.histplot(data=df, x="tuition_fee", kde=True, ax=axes[1, 0])
+    sns.histplot(data=df, x="time_with_friends", kde=True, ax=axes[1, 1])
+    sns.histplot(data=df, x="ssc_result", kde=True, ax=axes[1, 2])
+
+    fig.suptitle("Distribution of Numerical Features", fontsize=14)
+    plt.tight_layout()
+    plt.show()
+    return
+
+
+@app.cell
 def _(df):
     X = df.drop("hsc_result", axis=1)
     y = df["hsc_result"]
@@ -173,7 +192,10 @@ def _(categorical_features):
 @app.cell
 def _(Pipeline, SimpleImputer, StandardScaler):
     numerical_transformer = Pipeline(
-        steps=[("imputer", SimpleImputer(strategy="median")), ("scaler", StandardScaler())]
+        steps=[
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scaler", StandardScaler()),
+        ]
     )
     return (numerical_transformer,)
 
@@ -327,20 +349,17 @@ def _(X_test, final_pipe):
 
 @app.cell
 def _(plt, sns, y_final_pred, y_test):
-    plt.figure(figsize=(8, 6))
+    plt.figure(figsize=(14, 6))
     sns.scatterplot(x=y_test, y=y_final_pred, alpha=0.6, color="teal")
     plt.plot([2, 5], [2, 5], color="red", linestyle="--")
 
     plt.xlabel("Actual HSC Result")
     plt.ylabel("Predicted HSC Result")
 
+    plt.title("Actual vs Predicted HSC Result")
+    plt.tight_layout()
     plt.grid(True)
     plt.show()
-    return
-
-
-@app.cell
-def _():
     return
 
 
