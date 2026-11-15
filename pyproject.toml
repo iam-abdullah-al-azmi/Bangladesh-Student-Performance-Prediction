@@ -1,0 +1,17 @@
+[project]
+name = "bangladesh-student-performance-prediction"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "iam-abdullah-al-azmi", email = "azmi@iut-dhaka.edu" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+bangladesh-student-performance-prediction = "bangladesh_student_performance_prediction:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
