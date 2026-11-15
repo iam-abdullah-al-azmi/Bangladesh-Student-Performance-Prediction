@@ -7,7 +7,13 @@ authors = [
     { name = "iam-abdullah-al-azmi", email = "azmi@iut-dhaka.edu" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "numpy",
+    "pandas",
+    "seaborn",
+    "matplotlib",
+    "scikit-learn",
+]
 
 [project.scripts]
 bangladesh-student-performance-prediction = "bangladesh_student_performance_prediction:main"
