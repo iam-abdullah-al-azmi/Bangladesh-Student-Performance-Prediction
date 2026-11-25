@@ -1,21 +1,28 @@
 # Plan
 
-This markdown is created to keep track of the project. And this will be updated
-regularly.
+In this project, we will be learn how we can use the machine learning and how to
+utilize this knowledge to perform prediction task.
 
-## Data Analysis
+There, we will not be using any library, rather, we will develop our codebase from
+scratch. The reason is that if you only use the codebase, your fundamental will
+not be strong. That's why we will learn the concept first and then we will use
+them in the codebase.
 
-- First, we will perform the mean, median, mode operation using the pandas library.
-- Then, we will generate graphs to understand the distribution of data. The graphs
-  includes box plot, scatter plot, and histogram.
-- Now, well there is the library which we can use and generate the graph. But, since
-  we are here to understand the fundamental concepts, so, we will proceed with manual
-  process meaning we will write the formulate our own.
-- If we detect any outlier, we will proceed to mitigate it. Outlier means values
-  which cause abrupt changes in the mean of a feature. There is many ways to mitigate
-  the outlier issues, so we will look into this one as well.
-- Then, we will try to understand whether a specific feature (column) is right or
-  left skewed. Depending on that we have to perform some treatment so that our model
-  can be bias free.
+As a said in the previous paragraph, that, developing the codebase from scratch
+is very good. But, the problem here is developing the machine learning model from
+scratch is a bit luxury in our current situation. So, for model development we will
+depend on the libraries.
 
-## Working with models
+## Task
+
+| Task | Description                                 |
+| :--: | :------------------------------------------ |
+|  01  | Understanding what dataset treatment is.    |
+|  02  | Performing the necessary dataset treatment. |
+|  03  | Making the dataset compatible for model.    |
+|  04  | Model Development                           |
+|  05  | Model Training                              |
+|  06  | Model Testing                               |
+|  07  | Model Inferencing                           |
+|  08  | Result and Analysis                         |
+|  09  | Final revision of the document              |
